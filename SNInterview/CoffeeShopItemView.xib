@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CoffeeShopItemView" customModule="SNInterview" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="270"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCp-fr-z45" userLabel="Name">
+                    <rect key="frame" x="20" y="5" width="358" height="21"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-wt-SgU" userLabel="Review">
+                    <rect key="frame" x="20" y="36" width="358" height="199.5"/>
+                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmV-I4-37A" userLabel="Rating">
+                    <rect key="frame" x="20" y="245.5" width="358" height="14.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hiy-e6-yM1" userLabel="BottomBorder">
+                    <rect key="frame" x="0.0" y="269" width="378" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="OUe-Zb-cn9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hiy-e6-yM1" secondAttribute="trailing" constant="20" id="1bc-je-bYp"/>
+                <constraint firstItem="tCp-fr-z45" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="1kx-1K-vht"/>
+                <constraint firstAttribute="trailing" secondItem="tCp-fr-z45" secondAttribute="trailing" constant="20" id="Bn2-rD-j1k"/>
+                <constraint firstAttribute="bottom" secondItem="KmV-I4-37A" secondAttribute="bottom" constant="10" id="GmR-m8-Xhs"/>
+                <constraint firstItem="0Lb-wt-SgU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="KOV-Hq-Znd"/>
+                <constraint firstItem="KmV-I4-37A" firstAttribute="top" secondItem="0Lb-wt-SgU" secondAttribute="bottom" constant="10" id="L32-gn-i56"/>
+                <constraint firstItem="tCp-fr-z45" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="LRu-7t-jsM"/>
+                <constraint firstAttribute="trailing" secondItem="0Lb-wt-SgU" secondAttribute="trailing" constant="20" id="T5t-W7-RTd"/>
+                <constraint firstItem="0Lb-wt-SgU" firstAttribute="top" secondItem="tCp-fr-z45" secondAttribute="bottom" constant="10" id="TPg-M9-3kh"/>
+                <constraint firstAttribute="trailing" secondItem="KmV-I4-37A" secondAttribute="trailing" constant="20" id="UBM-yy-PtF"/>
+                <constraint firstItem="KmV-I4-37A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="l6V-Ha-3SO"/>
+                <constraint firstItem="Hiy-e6-yM1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qII-F9-fZX"/>
+                <constraint firstAttribute="bottom" secondItem="Hiy-e6-yM1" secondAttribute="bottom" id="uub-AH-hcK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ratingLabel" destination="KmV-I4-37A" id="BMx-Uf-ros"/>
+                <outlet property="reviewLabel" destination="0Lb-wt-SgU" id="3GQ-M7-ENy"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="283.25892857142856"/>
+        </view>
+    </objects>
+</document>
