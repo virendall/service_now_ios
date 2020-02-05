@@ -23,3 +23,6 @@ Load reviews from provided `CoffeeShops.json` file instead of the hard-coded arr
 Zip the project using the provided script in project root and email the zip file back to the recruiter.
 
 `./zip-project.sh`
+
+### Optional - Anonymous Survey (1-2min)
+https://eif.service-now.com/sp?id=public_survey&type_id=8c8a602ddbf2c8106b9effb41d961965
