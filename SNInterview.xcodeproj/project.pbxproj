@@ -17,6 +17,7 @@
 		576E9C8B234EF0D800199B25 /* CoffeeShopItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */; };
 		576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E9C8C234EF29E00199B25 /* CoffeeShopItemView.swift */; };
 		576E9C8F234EF35F00199B25 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E9C8E234EF35F00199B25 /* UIView+Additions.swift */; };
+		7A047B7426D997280031FC5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7A047B7326D997280031FC5E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 		576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeShopItemView.xib; sourceTree = "<group>"; };
 		576E9C8C234EF29E00199B25 /* CoffeeShopItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemView.swift; sourceTree = "<group>"; };
 		576E9C8E234EF35F00199B25 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
-		57DA91CB2354DB6C00A35DFA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7A047B7326D997280031FC5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		576E9C5C234E7B9900199B25 = {
 			isa = PBXGroup;
 			children = (
+				7A047B7326D997280031FC5E /* README.md */,
 				576E9C67234E7B9900199B25 /* SNInterview */,
 				576E9C7C234E7B9C00199B25 /* SNInterviewTests */,
 				576E9C66234E7B9900199B25 /* Products */,
@@ -87,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				576E9C68234E7B9900199B25 /* AppDelegate.swift */,
-				57DA91CB2354DB6C00A35DFA /* README.md */,
 				576E9C6A234E7B9900199B25 /* ViewController.swift */,
 				576E9C8C234EF29E00199B25 /* CoffeeShopItemView.swift */,
 				576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */,
@@ -191,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A047B7426D997280031FC5E /* README.md in Resources */,
 				576E9C73234E7B9C00199B25 /* LaunchScreen.storyboard in Resources */,
 				576E9C8B234EF0D800199B25 /* CoffeeShopItemView.xib in Resources */,
 				576E9C89234EC08400199B25 /* CoffeeShops.json in Resources */,
