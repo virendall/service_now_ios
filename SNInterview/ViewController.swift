@@ -42,8 +42,8 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = reviews[indexPath.row].name
+        let cell: ReviewTableViewCell = tableView.dequeueReusableCell()
+        cell.reviewView.nameLabel.text = reviews[indexPath.row].name
         return cell
     }
 }
