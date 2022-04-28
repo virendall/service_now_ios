@@ -6,22 +6,8 @@
 //
 
 import UIKit
-
-struct CoffeeShop {
-    let name: String
-    let review: String
-    let rating: Int
-}
-
-protocol CoffeeShopTapDelegate {
-    func didSelectItem(_ item: UIView?)
-}
-
 class ViewController: UITableViewController {
-    var delegate: CoffeeShopTapDelegate!
-    
-    @IBOutlet private weak var stackView: UIStackView!
-    
+
     private let reviews = [
         CoffeeShop(name:"Lofty", review: "Knowledgeable staff, stacked menu. Trust the Ethiopian in a pour over if you know your flavors. Will be back for the rest of this menu soon.", rating: 4),
         CoffeeShop(name:"Zumbar", review: "Came to SD for school tour and heading back to the Bay Area after today's final meeting. Was drinking Starbucks the whole trip until my sis recommended this cafe to me. LOVE IT!", rating: 5),
