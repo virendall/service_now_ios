@@ -31,7 +31,7 @@ class ReviewViewModel: ObservableObject {
     }
     
     func loadReviews()  {
-        self.loader.load().sink {[weak self] completion in
+        self.loader.load(endPoint: FileEndPoint.reviews).sink {[weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .error(error.localizedDescription)

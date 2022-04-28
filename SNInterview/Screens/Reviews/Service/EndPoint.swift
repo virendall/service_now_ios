@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EndPoint.swift
 //  SNInterview
 //
 //  Created by Virender Dall on 28/04/22.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Combine
 
-protocol ReviewLoader {
-    func load(endPoint: EndPoint) -> AnyPublisher<[CoffeeShop], Error>
+public protocol EndPoint {
+    var path: String { get }
 }

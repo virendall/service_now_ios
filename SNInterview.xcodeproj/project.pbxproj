@@ -30,6 +30,10 @@
 		824EAB74281ACB9300E6A8E9 /* LocalFileReviewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB73281ACB9300E6A8E9 /* LocalFileReviewLoader.swift */; };
 		824EAB77281ACBC700E6A8E9 /* ReviewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB76281ACBC700E6A8E9 /* ReviewLoader.swift */; };
 		824EAB79281ACE1300E6A8E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB78281ACE1300E6A8E9 /* UIViewController+Extension.swift */; };
+		824EAB7C281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB7B281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift */; };
+		824EAB7E281AE75100E6A8E9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB7D281AE75100E6A8E9 /* EndPoint.swift */; };
+		824EAB80281AE78300E6A8E9 /* FileEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB7F281AE78300E6A8E9 /* FileEndPoint.swift */; };
+		824EAB82281AE91C00E6A8E9 /* Invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 824EAB81281AE91C00E6A8E9 /* Invalid.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		824EAB73281ACB9300E6A8E9 /* LocalFileReviewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileReviewLoader.swift; sourceTree = "<group>"; };
 		824EAB76281ACBC700E6A8E9 /* ReviewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoader.swift; sourceTree = "<group>"; };
 		824EAB78281ACE1300E6A8E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		824EAB7B281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileReviewLoaderTests.swift; sourceTree = "<group>"; };
+		824EAB7D281AE75100E6A8E9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		824EAB7F281AE78300E6A8E9 /* FileEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEndPoint.swift; sourceTree = "<group>"; };
+		824EAB81281AE91C00E6A8E9 /* Invalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Invalid.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				576E9C88234EC08400199B25 /* CoffeeShops.json */,
+				824EAB81281AE91C00E6A8E9 /* Invalid.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 		824EAB55281A9F8100E6A8E9 /* Reviews */ = {
 			isa = PBXGroup;
 			children = (
+				824EAB7A281AE61900E6A8E9 /* Service */,
 				824EAB64281A9F9100E6A8E9 /* ViewModel */,
 			);
 			path = Reviews;
@@ -255,6 +265,7 @@
 			children = (
 				824EAB75281ACBB100E6A8E9 /* Impl */,
 				824EAB76281ACBC700E6A8E9 /* ReviewLoader.swift */,
+				824EAB7D281AE75100E6A8E9 /* EndPoint.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -271,8 +282,17 @@
 			isa = PBXGroup;
 			children = (
 				824EAB73281ACB9300E6A8E9 /* LocalFileReviewLoader.swift */,
+				824EAB7F281AE78300E6A8E9 /* FileEndPoint.swift */,
 			);
 			path = Impl;
+			sourceTree = "<group>";
+		};
+		824EAB7A281AE61900E6A8E9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				824EAB7B281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +340,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = ServiceNow;
 				TargetAttributes = {
 					576E9C64234E7B9900199B25 = {
@@ -360,6 +380,7 @@
 				576E9C73234E7B9C00199B25 /* LaunchScreen.storyboard in Resources */,
 				576E9C8B234EF0D800199B25 /* CoffeeShopItemView.xib in Resources */,
 				576E9C89234EC08400199B25 /* CoffeeShops.json in Resources */,
+				824EAB82281AE91C00E6A8E9 /* Invalid.json in Resources */,
 				576E9C70234E7B9C00199B25 /* Assets.xcassets in Resources */,
 				576E9C6E234E7B9900199B25 /* Main.storyboard in Resources */,
 			);
@@ -390,7 +411,9 @@
 				576E9C69234E7B9900199B25 /* AppDelegate.swift in Sources */,
 				824EAB39281A9DC400E6A8E9 /* CoffeeShop.swift in Sources */,
 				576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */,
+				824EAB80281AE78300E6A8E9 /* FileEndPoint.swift in Sources */,
 				824EAB31281A9C6000E6A8E9 /* UITableView+Extension.swift in Sources */,
+				824EAB7E281AE75100E6A8E9 /* EndPoint.swift in Sources */,
 				824EAB72281ACB3B00E6A8E9 /* FileUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +426,7 @@
 				824EAB6B281AA6A100E6A8E9 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				576E9C7E234E7B9C00199B25 /* SNInterviewTests.swift in Sources */,
 				824EAB6A281AA6A100E6A8E9 /* SharedTestHelpers.swift in Sources */,
+				824EAB7C281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +486,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -523,6 +548,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

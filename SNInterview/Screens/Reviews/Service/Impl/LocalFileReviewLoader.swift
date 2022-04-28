@@ -10,11 +10,11 @@ import Foundation
 import Combine
 
 class LocalFileReviewLoader: ReviewLoader {
-    func load() -> AnyPublisher<[CoffeeShop], Error> {
+    func load(endPoint: EndPoint) -> AnyPublisher<[CoffeeShop], Error> {
         return Future<[CoffeeShop], Error> { promise in
             DispatchQueue.global(qos: .userInitiated).async {
                 do {
-                    let data = try FileUtil.readJsonFile(name: "CoffeeShops")
+                    let data = try FileUtil.readJsonFile(name: endPoint.path)
                     let reviews = try JSONDecoder().decode([CoffeeShop].self, from: data)
                     promise(.success(reviews))
                 } catch {
