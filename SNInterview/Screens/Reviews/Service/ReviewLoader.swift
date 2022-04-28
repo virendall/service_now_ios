@@ -1,5 +1,5 @@
 //
-//  CoffeeShop.swift
+//  File.swift
 //  SNInterview
 //
 //  Created by Virender Dall on 28/04/22.
@@ -7,9 +7,8 @@
 //
 
 import Foundation
+import Combine
 
-struct CoffeeShop: Codable, Equatable {
-    let name: String
-    let review: String
-    let rating: Int
+protocol ReviewLoader {
+    func load() -> AnyPublisher<[CoffeeShop], Error>
 }
