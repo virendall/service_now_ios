@@ -17,7 +17,7 @@ protocol CoffeeShopTapDelegate {
     func didSelectItem(_ item: UIView?)
 }
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     var delegate: CoffeeShopTapDelegate!
     
     @IBOutlet private weak var stackView: UIStackView!
@@ -32,33 +32,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        reviews.forEach { coffeeShop in
-            guard let containerView = CoffeeShopItemView.fromNib() as? CoffeeShopItemView else {
-                fatalError("Failed loading CoffeeShopItemView")
-            }
-            
-            containerView.nameLabel.text = coffeeShop.name
-            containerView.reviewLabel.text = coffeeShop.review
-            containerView.ratingLabel.text = "Rating: \(Int(coffeeShop.rating))"
-            stackView.addArrangedSubview(containerView)
-            containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap)))
-        }
-        
-        delegate = CoffeeShopDetailsHandler()
     }
     
-    @objc
-    func onTap(item: UIView) {
-        delegate.didSelectItem(nil)
-    }
 }
 
-class CoffeeShopDetailsHandler: CoffeeShopTapDelegate {
-    func didSelectItem(_ item: UIView?) {
-        let tapped = item as! CoffeeShopItemView
-        
-        // TODO: display the item's details
-        print("Item Tapped: \(tapped)")
+extension ViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = reviews[indexPath.row].name
+        return cell
     }
 }

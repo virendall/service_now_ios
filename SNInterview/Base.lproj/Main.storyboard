@@ -1,44 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sWe-pc-ES8">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sWe-pc-ES8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Coffee Shops ☕️-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Dc4-ms-JED">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SNInterview" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EqN-vb-Np5">
+                <tableViewController id="lzj-5b-Azz" customClass="ViewController" customModule="SNInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="nen-s3-hdZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zj5-a7-ti2">
-                                <rect key="frame" x="10" y="98" width="394" height="754"/>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Zj5-a7-ti2" firstAttribute="leading" secondItem="mFk-oS-YO4" secondAttribute="leading" constant="10" id="Au3-8w-y8d"/>
-                            <constraint firstItem="mFk-oS-YO4" firstAttribute="trailing" secondItem="Zj5-a7-ti2" secondAttribute="trailing" constant="10" id="Tej-np-SpK"/>
-                            <constraint firstItem="Zj5-a7-ti2" firstAttribute="top" secondItem="mFk-oS-YO4" secondAttribute="top" constant="10" id="jgZ-8h-b0t"/>
-                            <constraint firstItem="mFk-oS-YO4" firstAttribute="bottom" secondItem="Zj5-a7-ti2" secondAttribute="bottom" constant="10" id="kWc-x2-Fwq"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mFk-oS-YO4"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Coffee Shops ☕️" id="5g7-EK-T8y"/>
-                    <connections>
-                        <outlet property="stackView" destination="Zj5-a7-ti2" id="KBp-Hh-KWe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="lzj-5b-Azz" id="rUm-fE-U2f"/>
+                            <outlet property="delegate" destination="lzj-5b-Azz" id="Vkb-UJ-rL0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Coffee Shops ☕️" id="f9V-8t-gHB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JU9-TI-7RD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="783"/>
+            <point key="canvasLocation" x="1601" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MJa-tv-hQK">
@@ -49,11 +36,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4kZ-aR-wwL"/>
+                        <segue destination="lzj-5b-Azz" kind="relationship" relationship="rootViewController" id="AT5-kw-scE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROT-4l-zBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="665" y="83"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
