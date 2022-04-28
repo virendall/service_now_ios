@@ -16,6 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewTableViewCell" id="zMJ-3Y-ae1" customClass="ReviewTableViewCell" customModule="SNInterview" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zMJ-3Y-ae1" id="e2z-T1-Umh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUb-dX-86n" customClass="CoffeeShopItemView" customModule="SNInterview" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="bUb-dX-86n" secondAttribute="bottom" priority="999" id="4Yr-N6-Ls7"/>
+                                        <constraint firstItem="bUb-dX-86n" firstAttribute="leading" secondItem="e2z-T1-Umh" secondAttribute="leading" id="KRl-wB-hs0"/>
+                                        <constraint firstItem="bUb-dX-86n" firstAttribute="top" secondItem="e2z-T1-Umh" secondAttribute="top" priority="999" id="LiN-S5-c4n"/>
+                                        <constraint firstAttribute="trailing" secondItem="bUb-dX-86n" secondAttribute="trailing" id="TJ7-fp-IdU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="reviewView" destination="bUb-dX-86n" id="bg1-Tl-Dw0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="lzj-5b-Azz" id="rUm-fE-U2f"/>
                             <outlet property="delegate" destination="lzj-5b-Azz" id="Vkb-UJ-rL0"/>
