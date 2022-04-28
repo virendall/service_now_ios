@@ -9,15 +9,7 @@
 import UIKit
 
 extension UIView {
-    
-    func addIn(superview: UIView) {
-        self.translatesAutoresizingMaskIntoConstraints = false;
-        superview.addSubview(self);
-        self.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
-        self.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
-    }
-    
-    
+
     func loadView<T: UIView>(_ type : T.Type) {
         Bundle.main.loadNibNamed(T.description().className, owner: self, options: nil)
     }

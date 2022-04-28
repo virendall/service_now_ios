@@ -31,10 +31,11 @@ class ViewController: UITableViewController {
                 self?.tableView.reloadData()
             })
             .store(in: &bindings)
-        
         viewModel.$state
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: stateValueHandler)
+            .sink(receiveValue: {[weak self] state in
+                self?.stateValueHandler(state)
+            })
             .store(in: &bindings)
     }
     
@@ -68,6 +69,8 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ReviewTableViewCell = tableView.dequeueReusableCell()
         cell.reviewView.nameLabel.text = viewModel.reviews[indexPath.row].name
+        cell.reviewView.reviewLabel.text = viewModel.reviews[indexPath.row].review
+        cell.reviewView.ratingLabel.text = "\(viewModel.reviews[indexPath.row].rating)%"
         return cell
     }
 }

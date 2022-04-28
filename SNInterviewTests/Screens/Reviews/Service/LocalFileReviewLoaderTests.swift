@@ -88,8 +88,8 @@ class LocalFileReviewLoaderTests: XCTestCase {
         switch (receivedResult, expectedResult) {
         case let (.success(receivedImages), .success(expectedImages)):
             XCTAssertEqual(receivedImages, expectedImages, file: file, line: line)
-        case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
-            XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+        case let (.failure(receivedError), .failure(expectedError)):
+            XCTAssertEqual(receivedError.localizedDescription, expectedError.localizedDescription, file: file, line: line)
         default:
             XCTFail("Expected result \(expectedResult), got \(String(describing: receivedResult)) instead", file: file, line: line)
         }

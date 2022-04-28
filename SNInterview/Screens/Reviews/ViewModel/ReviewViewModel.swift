@@ -22,7 +22,7 @@ class ReviewViewModel: ObservableObject {
     
     @Published private(set) var state: ReviewViewModelState = .finish
     
-    private let loader: ReviewLoader!
+    public let loader: ReviewLoader!
     
     private var bindings = Set<AnyCancellable>()
     

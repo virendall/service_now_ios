@@ -12,7 +12,6 @@
 		576E9C6E234E7B9900199B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C6C234E7B9900199B25 /* Main.storyboard */; };
 		576E9C70234E7B9C00199B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C6F234E7B9C00199B25 /* Assets.xcassets */; };
 		576E9C73234E7B9C00199B25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C71234E7B9C00199B25 /* LaunchScreen.storyboard */; };
-		576E9C7E234E7B9C00199B25 /* SNInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E9C7D234E7B9C00199B25 /* SNInterviewTests.swift */; };
 		576E9C89234EC08400199B25 /* CoffeeShops.json in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C88234EC08400199B25 /* CoffeeShops.json */; };
 		576E9C8B234EF0D800199B25 /* CoffeeShopItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */; };
 		576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E9C8C234EF29E00199B25 /* CoffeeShopItemView.swift */; };
@@ -34,6 +33,7 @@
 		824EAB7E281AE75100E6A8E9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB7D281AE75100E6A8E9 /* EndPoint.swift */; };
 		824EAB80281AE78300E6A8E9 /* FileEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB7F281AE78300E6A8E9 /* FileEndPoint.swift */; };
 		824EAB82281AE91C00E6A8E9 /* Invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 824EAB81281AE91C00E6A8E9 /* Invalid.json */; };
+		824EAB85281AF2C200E6A8E9 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824EAB84281AF2C200E6A8E9 /* ViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		576E9C72234E7B9C00199B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		576E9C74234E7B9C00199B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		576E9C79234E7B9C00199B25 /* SNInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		576E9C7D234E7B9C00199B25 /* SNInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNInterviewTests.swift; sourceTree = "<group>"; };
 		576E9C7F234E7B9C00199B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		576E9C88234EC08400199B25 /* CoffeeShops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoffeeShops.json; sourceTree = "<group>"; };
 		576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeShopItemView.xib; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		824EAB7D281AE75100E6A8E9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		824EAB7F281AE78300E6A8E9 /* FileEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEndPoint.swift; sourceTree = "<group>"; };
 		824EAB81281AE91C00E6A8E9 /* Invalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Invalid.json; sourceTree = "<group>"; };
+		824EAB84281AF2C200E6A8E9 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,6 @@
 			children = (
 				824EAB67281AA6A100E6A8E9 /* Helpers */,
 				824EAB54281A9F8100E6A8E9 /* Screens */,
-				576E9C7D234E7B9C00199B25 /* SNInterviewTests.swift */,
 				576E9C7F234E7B9C00199B25 /* Info.plist */,
 			);
 			path = SNInterviewTests;
@@ -229,6 +228,7 @@
 		824EAB55281A9F8100E6A8E9 /* Reviews */ = {
 			isa = PBXGroup;
 			children = (
+				824EAB83281AF2A500E6A8E9 /* View */,
 				824EAB7A281AE61900E6A8E9 /* Service */,
 				824EAB64281A9F9100E6A8E9 /* ViewModel */,
 			);
@@ -293,6 +293,14 @@
 				824EAB7B281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		824EAB83281AF2A500E6A8E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				824EAB84281AF2C200E6A8E9 /* ViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,9 +430,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824EAB85281AF2C200E6A8E9 /* ViewControllerTests.swift in Sources */,
 				824EAB66281A9FA300E6A8E9 /* ReviewViewModelTests.swift in Sources */,
 				824EAB6B281AA6A100E6A8E9 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
-				576E9C7E234E7B9C00199B25 /* SNInterviewTests.swift in Sources */,
 				824EAB6A281AA6A100E6A8E9 /* SharedTestHelpers.swift in Sources */,
 				824EAB7C281AE63C00E6A8E9 /* LocalFileReviewLoaderTests.swift in Sources */,
 			);
