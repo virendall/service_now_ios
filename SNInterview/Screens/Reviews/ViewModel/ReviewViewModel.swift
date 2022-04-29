@@ -43,4 +43,8 @@ class ReviewViewModel: ObservableObject {
         }
         .store(in: &bindings)
     }
+    
+    func sortReviews() {
+        self.reviews = self.reviews.sorted { $0.rating > $1.rating }
+    }
 }

@@ -25,7 +25,7 @@ class CoffeeShopItemView: UIView {
     
     func updateView(info: CoffeeShop) {
         self.nameLabel.text = info.name
-        self.ratingLabel.text = "\(info.rating)%"
+        self.ratingLabel.text = String(repeating: "⭐️", count: info.rating)
         self.reviewLabel.text = info.review
     }
 }

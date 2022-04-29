@@ -20,10 +20,6 @@ class ViewController: UITableViewController {
         viewModel.loadReviews()
     }
     
-    @IBAction private func refresh() {
-        viewModel.loadReviews()
-    }
-    
     private func setUpBindings() {
         viewModel.$reviews
             .receive(on: DispatchQueue.main)
@@ -58,7 +54,17 @@ class ViewController: UITableViewController {
         self.showError(state)
     }
 }
+extension ViewController {
+    
+    @IBAction func refresh() {
+        viewModel.loadReviews()
+    }
+    
+    @IBAction func sortReviews() {
+        viewModel.sortReviews()
+    }
 
+}
 // MARK: - Table DataSource
 
 extension ViewController {

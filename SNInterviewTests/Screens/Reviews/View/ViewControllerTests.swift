@@ -83,16 +83,24 @@ class ViewControllerTests: XCTestCase {
         let(sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
         assertThat(sut, isRendering: [])
-        let result = [mockReview(rating: 0), mockReview(rating:1), mockReview(rating: 2)]
+        var result = [mockReview(rating: 0), mockReview(rating:1), mockReview(rating: 2)]
         loader.result = .success(result)
         let exp = expectation(description: "Waiting for data fetch")
-        sut.viewModel.loadReviews()
+        sut.refresh()
         sut.viewModel.$reviews
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 exp.fulfill()
             }.store(in: &cancallables)
         wait(for: [exp], timeout: 2)
+        cancallables.forEach { item in
+            item.cancel()
+        }
+        assertThat(sut, isRendering: result)
+        sut.sortReviews()
+        result = result.sorted {
+            $0.rating > $1.rating
+        }
         assertThat(sut, isRendering: result)
     }
     
@@ -172,7 +180,7 @@ class ViewControllerTests: XCTestCase {
         }
         XCTAssertEqual(cell.nameText, review.name, "Expected name text to be \(String(describing: review.name)) for review view at index (\(index))", file: file, line: line)
         XCTAssertEqual(cell.reviewText, review.review, "Expected review text to be \(String(describing: review.review)) for review view at index (\(index))", file: file, line: line)
-        XCTAssertEqual(cell.ratingText, "\(review.rating)%", "Expected review rating to be \(String(describing: review.rating)) for review view at index (\(index))", file: file, line: line)
+        XCTAssertEqual(cell.ratingText?.count, review.rating, "Expected review rating star to be \(String(describing: review.rating)) for review view at index (\(index))", file: file, line: line)
     }
     
     private func mockReview(

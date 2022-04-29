@@ -46,8 +46,15 @@
                             <outlet property="delegate" destination="lzj-5b-Azz" id="Vkb-UJ-rL0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Coffee Shops ☕️" id="f9V-8t-gHB"/>
+                    <navigationItem key="navigationItem" title="Coffee Shops ☕️" id="f9V-8t-gHB">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="HYX-v3-N75">
+                            <connections>
+                                <action selector="sortReviews" destination="lzj-5b-Azz" id="2tW-Rm-Q22"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="DzD-4J-Ki2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle">
                             <fragment content="Refreshing">
