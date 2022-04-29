@@ -55,6 +55,12 @@ extension ViewController {
         return ds?.tableView(tableView, cellForRowAt: index)
     }
     
+    func click(at row: Int) {
+        let de = tableView.delegate
+        let index = IndexPath(row: row, section: reviewSection)
+        de?.tableView?(tableView, didSelectRowAt: index)
+    }
+    
     private var reviewSection: Int {
         return 0
     }
@@ -63,7 +69,7 @@ extension ViewController {
 class ViewControllerTests: XCTestCase {
     var cancallables: Set<AnyCancellable> = []
     func test_loadAction_requestFromLoader() {
-        let(sut, loader) = makeSUTWithMemoryLeak()
+        let(sut, loader) = makeSUT()
         XCTAssertEqual(loader.callCount, 0, "before view load expecting no request loading call")
         
         sut.loadViewIfNeeded()
@@ -74,7 +80,7 @@ class ViewControllerTests: XCTestCase {
     }
     
     func test_loadSuccess_rendersReviews() {
-        let(sut, loader) = makeSUTWithMemoryLeak()
+        let(sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
         assertThat(sut, isRendering: [])
         let result = [mockReview(rating: 0), mockReview(rating:1), mockReview(rating: 2)]
@@ -90,10 +96,29 @@ class ViewControllerTests: XCTestCase {
         assertThat(sut, isRendering: result)
     }
     
+    func test_cellClick_presentReviewDetailVC() {
+        let (sut, loader) = makeMockSut()
+        sut.loadViewIfNeeded()
+        let result = [mockReview(rating: 0), mockReview(rating:1), mockReview(rating: 2)]
+        loader.result = .success(result)
+        let exp = expectation(description: "Waiting for data fetch")
+        sut.viewModel.loadReviews()
+        sut.viewModel.$reviews
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                exp.fulfill()
+            }.store(in: &cancallables)
+        wait(for: [exp], timeout: 2)
+        sut.click(at: 0)
+        let reviewDetails = sut.presentViewControllerTarget as? ReviewDetailViewController
+        XCTAssertNotNil(reviewDetails, "ReviewDetailViewController was not presented")
+        XCTAssertEqual(reviewDetails?.review, result[0])
+        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(loader)
+    }
+    
     func test_loadFailure_presentAlert() {
-        let sut = MockViewController()
-        let loader = ReviewLoaderSpy()
-        sut.viewModel = ReviewViewModel(loader: loader)
+        let (sut, loader) = makeMockSut()
         sut.loadViewIfNeeded()
         loader.result = .failure(FileError.invalidPath)
         let exp = expectation(description: "Waiting for data fetch")
@@ -112,16 +137,18 @@ class ViewControllerTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    private func makeMockSut(file: StaticString = #file, line: UInt = #line) -> (sut: MockViewController, loader: ReviewLoaderSpy) {
+        let sut = MockViewController()
+        let loader = ReviewLoaderSpy()
+        sut.viewModel = ReviewViewModel(loader: loader)
+        return (sut, loader)
+    }
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: ViewController, loader: ReviewLoaderSpy) {
         let loader = ReviewLoaderSpy()
         let bundle = Bundle(for: ViewController.self)
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         sut.viewModel = ReviewViewModel(loader: loader)
-        return (sut, loader)
-    }
-    private func makeSUTWithMemoryLeak(file: StaticString = #file, line: UInt = #line) -> (sut: ViewController, loader: ReviewLoaderSpy) {
-        let (sut, loader) = makeSUT()
         trackForMemoryLeaks(sut, file: file, line: line)
         trackForMemoryLeaks(loader, file: file, line: line)
         return (sut, loader)
