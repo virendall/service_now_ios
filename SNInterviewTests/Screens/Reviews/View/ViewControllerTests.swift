@@ -91,10 +91,9 @@ class ViewControllerTests: XCTestCase {
     }
     
     func test_loadFailure_presentAlert() {
-        let(sut, loader) = makeSUT()
-        UIApplication.shared.windows.filter {
-            $0.isKeyWindow
-        }.first?.rootViewController = sut
+        let sut = MockViewController()
+        let loader = ReviewLoaderSpy()
+        sut.viewModel = ReviewViewModel(loader: loader)
         sut.loadViewIfNeeded()
         loader.result = .failure(FileError.invalidPath)
         let exp = expectation(description: "Waiting for data fetch")
@@ -104,9 +103,12 @@ class ViewControllerTests: XCTestCase {
             .sink { _ in
                 exp.fulfill()
             }.store(in: &cancallables)
-        wait(for: [exp], timeout: 2)
-        XCTAssertTrue(sut.presentedViewController is UIAlertController)
-        XCTAssertEqual(sut.presentedViewController?.title, "Error")
+        wait(for: [exp], timeout: 1)
+        let alertController = sut.presentViewControllerTarget as? UIAlertController
+        XCTAssertNotNil(alertController, "UIAlertController was not presented")
+        XCTAssertEqual(alertController?.title, "Error")
+        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(loader)
     }
     
     // MARK: - Helpers
@@ -152,5 +154,12 @@ class ViewControllerTests: XCTestCase {
         return CoffeeShop(
             name: name, review: review, rating: rating
         )
+    }
+    
+    class MockViewController: ViewController {
+        var presentViewControllerTarget: UIViewController?
+        override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+            presentViewControllerTarget = viewControllerToPresent
+        }
     }
 }

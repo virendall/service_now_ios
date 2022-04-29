@@ -68,9 +68,7 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ReviewTableViewCell = tableView.dequeueReusableCell()
-        cell.reviewView.nameLabel.text = viewModel.reviews[indexPath.row].name
-        cell.reviewView.reviewLabel.text = viewModel.reviews[indexPath.row].review
-        cell.reviewView.ratingLabel.text = "\(viewModel.reviews[indexPath.row].rating)%"
+        cell.reviewView.updateView(info: viewModel.reviews[indexPath.row])
         return cell
     }
 }
@@ -79,6 +77,8 @@ extension ViewController {
 
 extension ViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = ReviewDetailViewController()
+        vc.review = viewModel.reviews[indexPath.row]
+        self.present(vc, animated: true, completion: nil)
     }
 }

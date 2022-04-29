@@ -23,4 +23,9 @@ class CoffeeShopItemView: UIView {
         contentView.fixIn(superview: self)
     }
     
+    func updateView(info: CoffeeShop) {
+        self.nameLabel.text = info.name
+        self.ratingLabel.text = "\(info.rating)%"
+        self.reviewLabel.text = info.review
+    }
 }

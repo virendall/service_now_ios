@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewDetailViewController" customModule="SNInterview" customModuleProvider="target">
+            <connections>
+                <outlet property="reviewView" destination="MUO-JY-suS" id="lfY-8t-pSB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-h5-dEO">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="Review Detail" id="haf-Cv-9z0">
+                            <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="nNc-bL-Cw5">
+                                <connections>
+                                    <action selector="cancel" destination="-1" id="0tm-8U-8b4"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wg-F5-KqQ" userLabel="ScrollParentView">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YST-lK-aEs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pae-A8-A7r" userLabel="ContentView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUO-JY-suS" customClass="CoffeeShopItemView" customModule="SNInterview" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="MUO-JY-suS" secondAttribute="trailing" id="A7E-HL-noh"/>
+                                        <constraint firstItem="MUO-JY-suS" firstAttribute="leading" secondItem="pae-A8-A7r" secondAttribute="leading" id="SIG-t4-ORS"/>
+                                        <constraint firstAttribute="bottom" secondItem="MUO-JY-suS" secondAttribute="bottom" id="f3l-mz-67U"/>
+                                        <constraint firstItem="MUO-JY-suS" firstAttribute="top" secondItem="pae-A8-A7r" secondAttribute="top" id="hj0-oT-r4Y"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="pae-A8-A7r" secondAttribute="trailing" id="15w-gl-9Eu"/>
+                                <constraint firstItem="pae-A8-A7r" firstAttribute="top" secondItem="YST-lK-aEs" secondAttribute="top" id="DWh-LB-Fe5"/>
+                                <constraint firstItem="pae-A8-A7r" firstAttribute="leading" secondItem="YST-lK-aEs" secondAttribute="leading" id="Hra-6G-QcZ"/>
+                                <constraint firstAttribute="bottom" secondItem="pae-A8-A7r" secondAttribute="bottom" id="tuS-HD-JP6"/>
+                            </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="7hz-CT-mPB"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="zkv-e2-lZB"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="YST-lK-aEs" firstAttribute="top" secondItem="7wg-F5-KqQ" secondAttribute="top" id="P1H-d1-r3V"/>
+                        <constraint firstAttribute="bottom" secondItem="YST-lK-aEs" secondAttribute="bottom" id="XfA-Y2-HVX"/>
+                        <constraint firstItem="YST-lK-aEs" firstAttribute="leading" secondItem="7wg-F5-KqQ" secondAttribute="leading" id="aef-ae-vX1"/>
+                        <constraint firstAttribute="trailing" secondItem="YST-lK-aEs" secondAttribute="trailing" id="aql-un-mhV"/>
+                        <constraint firstItem="pae-A8-A7r" firstAttribute="width" secondItem="7wg-F5-KqQ" secondAttribute="width" id="s2j-0J-jhO"/>
+                        <constraint firstItem="pae-A8-A7r" firstAttribute="height" secondItem="7wg-F5-KqQ" secondAttribute="height" priority="250" id="s3U-OY-MaP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7bS-h5-dEO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="00r-af-DA1"/>
+                <constraint firstItem="7wg-F5-KqQ" firstAttribute="top" secondItem="7bS-h5-dEO" secondAttribute="bottom" id="Oxg-Rj-Mrq"/>
+                <constraint firstItem="7wg-F5-KqQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="gfW-L2-W0s"/>
+                <constraint firstItem="7bS-h5-dEO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u2s-3r-iZS"/>
+                <constraint firstItem="7wg-F5-KqQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="w3n-Ub-fQT"/>
+                <constraint firstItem="7bS-h5-dEO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yEx-5a-ADz"/>
+                <constraint firstItem="7wg-F5-KqQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yob-mQ-day"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
