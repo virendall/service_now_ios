@@ -156,6 +156,14 @@
 			path = ReviewDetailView;
 			sourceTree = "<group>";
 		};
+		820E4D2A281BBE7E00C38B64 /* ReviewListView */ = {
+			isa = PBXGroup;
+			children = (
+				576E9C6A234E7B9900199B25 /* ViewController.swift */,
+			);
+			path = ReviewListView;
+			sourceTree = "<group>";
+		};
 		824EAB28281A9BF100E6A8E9 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,10 +231,10 @@
 		824EAB3A281A9DE600E6A8E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				820E4D2A281BBE7E00C38B64 /* ReviewListView */,
 				820E4D29281BB49B00C38B64 /* ReviewDetailView */,
 				824EAB28281A9BF100E6A8E9 /* TableCells */,
 				824EAB35281A9D7B00E6A8E9 /* CustomViews */,
-				576E9C6A234E7B9900199B25 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
